@@ -5,10 +5,11 @@
     <classes>
       <class name="scratchTest.InvalidUrlTest">
         <methods>
-          <include name="testValidProtocol"/>
-          <include name="testInvalidProtocol"/>
-          <include name="skip"/>
+          <include name="testMissingProtocol"/>
+          <include name="closeWindow"/>
+          <include name="testOtherValidDomain"/>
           <include name="launchBrowser"/>
+          <include name="skip"/>
         </methods>
       </class> <!-- scratchTest.InvalidUrlTest -->
     </classes>

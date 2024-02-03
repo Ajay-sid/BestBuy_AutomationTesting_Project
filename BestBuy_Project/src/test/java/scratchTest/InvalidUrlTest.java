@@ -1,5 +1,6 @@
 package scratchTest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,24 +19,37 @@ public class InvalidUrlTest extends ProjectSpec {
 	
 	
 	@Parameters({"browser"})
-	@Test(groups = {"invalidUrl"})
-	public void testInvalidProtocol(String browser) {
-		launch(browser, "www.bestbuy.com");
+	@Test(groups = {"invalidUrl"},priority=1)
+	public void testMissingProtocol(String browser) throws InterruptedException, IOException {
+//	testig with malformed url	
+		String link =prop.getProperty("missingProtocoll");
+		launch(browser,link);
+		String message = urlCheck(link);
+		Assert.assertEquals(message, "no protocol: www.bestbuy.com");	
+		
+	}
+	
+	
+	@Parameters({"browser"})
+	@Test(groups = {"invalidUrl"},priority=2)
+	public void testInvalidProtocol(String browser) throws IOException {
+		launch(browser, prop.getProperty("invalidProtocoll"));
+		String message = urlCheck(prop.getProperty("invalidProtocoll"));
+		Assert.assertEquals(message, "unknown protocol: fttps");	
+		
+		
+	}
+
+	@Parameters({"browser"})
+	@Test(groups = {"invalidUrl"},priority=3)
+	public void testOtherValidDomain(String browser) throws InterruptedException {
+		launch(browser,prop.getProperty("otherDomain"));
+		Thread.sleep(5000);
 		System.out.println(getPageTitle());
-		//Assert.assertNotEquals(getPageTitle(), "Best Buy | Official Online Store | Shop Now & Save");
 		
-		
-		
-		
-	
-	}
-	
-	@Test(groups = {"invalidUrl"})
-	public void testValidProtocol() {
-		
+		Assert.assertNotEquals(getPageTitle(), "Best Buy | Official Online Store | Shop Now & Save");
+			
 		
 	}
-	
-	
 
 }

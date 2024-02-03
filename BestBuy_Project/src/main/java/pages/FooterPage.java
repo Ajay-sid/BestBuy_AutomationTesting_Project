@@ -1,5 +1,12 @@
 package pages;
 
-public class FooterPage {
+import org.openqa.selenium.WebDriver;
 
+public class FooterPage  {
+
+	public FooterPage(WebDriver driver) {
+		
+	}
+	
+	
 }

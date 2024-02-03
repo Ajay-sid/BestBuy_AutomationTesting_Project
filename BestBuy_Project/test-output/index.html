@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="scratchTest.InvalidUrlTest" class="method navigator-link" hash-for-method="testInvalidProtocol(firfox)">testInvalidProtocol(firfox)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -117,7 +103,17 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="scratchTest.InvalidUrlTest" class="method navigator-link" hash-for-method="testValidProtocol">testValidProtocol</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="scratchTest.InvalidUrlTest" class="method navigator-link" hash-for-method="testInvalidProtocol(chrome)">testInvalidProtocol(chrome)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="scratchTest.InvalidUrlTest" class="method navigator-link" hash-for-method="testMissingProtocol(chrome)">testMissingProtocol(chrome)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="scratchTest.InvalidUrlTest" class="method navigator-link" hash-for-method="testOtherValidDomain(chrome)">testOtherValidDomain(chrome)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -132,28 +128,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">scratchTest.InvalidUrlTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testInvalidProtocol(firfox)">
-                  </a> <!-- testInvalidProtocol(firfox) -->
-                  <span class="method-name">testInvalidProtocol</span>
-                  <span class="parameters">(firfox)</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.manage()&quot; because &quot;this.driver&quot; is null
-	at utility.UtilityClass.launch(UtilityClass.java:47)
-	at scratchTest.InvalidUrlTest.testInvalidProtocol(InvalidUrlTest.java:23)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -162,9 +136,26 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testValidProtocol">
-                  </a> <!-- testValidProtocol -->
-                  <span class="method-name">testValidProtocol</span>
+                  <a name="testInvalidProtocol(chrome)">
+                  </a> <!-- testInvalidProtocol(chrome) -->
+                  <span class="method-name">testInvalidProtocol</span>
+                  <span class="parameters">(chrome)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMissingProtocol(chrome)">
+                  </a> <!-- testMissingProtocol(chrome) -->
+                  <span class="method-name">testMissingProtocol</span>
+                  <span class="parameters">(chrome)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testOtherValidDomain(chrome)">
+                  </a> <!-- testOtherValidDomain(chrome) -->
+                  <span class="method-name">testOtherValidDomain</span>
+                  <span class="parameters">(chrome)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -179,7 +170,7 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;parameter name=&quot;browser&quot; value=&quot;firfox&quot;/&gt;
+  &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
   &lt;test thread-count=&quot;1&quot; name=&quot;Test&quot;&gt;
     &lt;parameter name=&quot;url&quot; value=&quot;https://www.bestbuy.com&quot;/&gt;
     &lt;groups&gt;
@@ -220,7 +211,11 @@
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
-                <span class="method-in-group-name">testValidProtocol</span>
+                <span class="method-in-group-name">testMissingProtocol</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testOtherValidDomain</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -240,20 +235,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testInvalidProtocol')
+data.setCell(0, 1, 'testOtherValidDomain')
 data.setCell(0, 2, 'scratchTest.InvalidUrlTest')
-data.setCell(0, 3, 11);
+data.setCell(0, 3, 7528);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testValidProtocol')
+data.setCell(1, 1, 'testMissingProtocol')
 data.setCell(1, 2, 'scratchTest.InvalidUrlTest')
-data.setCell(1, 3, 1);
+data.setCell(1, 3, 1994);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testInvalidProtocol')
+data.setCell(2, 2, 'scratchTest.InvalidUrlTest')
+data.setCell(2, 3, 1442);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 12 ms</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -280,24 +279,46 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">scratchTest.InvalidUrlTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">skip</span>
+              <div class="configuration-class before">
+                <span class="method-name">propertiesLoad</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">skip</span>
+                <span class="method-start">24 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">testInvalidProtocol(firfox)</span>
-                <span class="method-start">8 ms</span>
+                <span class="method-name">testMissingProtocol(chrome)</span>
+                <span class="method-start">25 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeWindow</span>
+                <span class="method-start">2022 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">skip</span>
+                <span class="method-start">2277 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testInvalidProtocol(chrome)</span>
+                <span class="method-start">2277 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeWindow</span>
+                <span class="method-start">3722 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">testOtherValidDomain(chrome)</span>
+                <span class="method-start">3997 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">skip</span>
-                <span class="method-start">28 ms</span>
+                <span class="method-start">3997 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">testValidProtocol</span>
-                <span class="method-start">29 ms</span>
-              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeWindow</span>
+                <span class="method-start">11526 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

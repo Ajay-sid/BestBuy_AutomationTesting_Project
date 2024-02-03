@@ -1,6 +1,12 @@
 package utility;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.SocketException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -9,7 +15,9 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,10 +26,18 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pages.FooterPage;
+import pages.HeaderPage;
+
 //BestBuy
 public class UtilityClass {
 	public WebDriver driver;
-	public boolean urlFlag=false;
+	public HeaderPage header;
+	public FooterPage footer;
+	public File file;
+	public Properties prop;
+	public FileInputStream fis;
+	
 	
 
 	// Launching URL
@@ -50,6 +66,7 @@ public class UtilityClass {
 		WebElement us = driver.findElement(By.xpath("//div[@lang='en']/div[@class='country-selection']/a[@class='us-link']"));
 		elementClick(us);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.switchTo().defaultContent();
 		
 		}catch(Exception e) {
 			
@@ -57,16 +74,31 @@ public class UtilityClass {
 		
 	}
 	
-//	public String propertyData() {
-//		Properties prop =new Properties();
-//		
-//		
-//		
-//	}
-	
+	public String urlCheck(String link) throws IOException {
+		
+		String msg;
+		try {
+			HttpURLConnection huc =(HttpURLConnection)(new URL(link).openConnection());
+			huc.connect();
+			int code =huc.getResponseCode();
+			return  ""+code;
+			
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+			return e.getMessage();
+			 
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			return e.getMessage();
+		}
+		
+		
+		
+	}
 	
 		
-	
+	// Excel data to array - Appache POI
 	public static String[][] ReadExcel(String excelname) throws IOException {
 
 		XSSFWorkbook book = new XSSFWorkbook("./data/" + excelname + ".xlsx");
@@ -95,29 +127,47 @@ public class UtilityClass {
 		return data;
 
 	}
-
+	
+	
+	
+	//close active window
 	public void close() {
 
 		driver.close();
 
 	}
+	
+	
+	//close entire browser
 	public void quit() {
 		driver.quit();
 	}
 	
+	//Click an element
 	public void elementClick(WebElement element) {
+		try {
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		element.click();
+		}catch(WebDriverException e){
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("arguments[0].click();", element);
+			
+		}
+		
 	}
 	
-	public void sendKeys(WebElement ele,String string) {
-		
-		ele.sendKeys(string);
+	
+	//SendKeys
+	public void sendKeys(WebElement element,String string) {
+		element.clear();
+		element.sendKeys(string);
 		
 		
 	}
 	
+	
+	//Getting page Title
 	public String getPageTitle() {
         return driver.getTitle();
     }
