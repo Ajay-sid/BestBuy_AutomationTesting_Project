@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<parameter name="browser" value="chrome"></parameter>
+	<parameter name="browser" value="chrome"></parameter> 
   <test thread-count="1" name="Test">
-	   <parameter name="url" value="https://www.bestbuy.com"></parameter>
-	   <groups>
-		  <run>
-			  <include name="invalidUrl"></include>
-		  </run>
-	  </groups>
+	  <parameter name="url" value="https://www.bestbuy.com/?intl=nosplash"></parameter> 
+	  
 	  <classes>
 		  <class name="scratchTest.InvalidUrlTest"></class>
 	  </classes>
+	  
+	  
   </test> <!-- Test -->
 </suite> <!-- Suite -->
-

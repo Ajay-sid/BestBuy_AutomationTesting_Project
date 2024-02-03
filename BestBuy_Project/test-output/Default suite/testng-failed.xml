@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="scratchTest.InvalidUrlTest">
+      <class name="scratchTest.ValidateUrl">
         <methods>
-          <include name="testMissingProtocol"/>
-          <include name="closeWindow"/>
-          <include name="testOtherValidDomain"/>
           <include name="launchBrowser"/>
-          <include name="skip"/>
+          <include name="ccloseWindow"/>
+          <include name="validUrl"/>
+          <include name="InvalidUrl"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- scratchTest.InvalidUrlTest -->
+      </class> <!-- scratchTest.ValidateUrl -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

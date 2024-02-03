@@ -17,6 +17,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 
 import utility.UtilityClass;
@@ -77,17 +78,29 @@ public class ProjectSpec extends UtilityClass implements ITestListener{
 		
 	}
 	
-	@BeforeClass(groups= {"invalidUrl"})
+	@BeforeTest()
 	public void propertiesLoad() throws IOException {
 		System.out.println("Hi");
 		 file = new File("src/main/java/property/data.properties");
 		 prop = new Properties();
 		 fis = new FileInputStream(file);
 		 prop.load(fis);
+		 System.out.println("Hi end");
+	}
+	
+	@DataProvider(name="getSingleArrayData")
+	public String[] getData() throws IOException {
+	return ReadSingle(excelFile) ;
 	
 	}
 	
-
+	
+	
+	
+	
+	
+	
+	
 	@Parameters({"browser","url"})
 	@BeforeMethod()
 	public void launchBrowser(String browser,String url) {
@@ -98,20 +111,14 @@ public class ProjectSpec extends UtilityClass implements ITestListener{
 	}
 	
 	
-	@BeforeMethod(groups= {"invalidUrl"})
-	public void skip() {
-		
-	}
 	
 	
 	
-	@AfterMethod(groups= {"invalidUrl"})
+	
+	
+	@AfterMethod()
 	public void closeWindow(){
-		quit();
-	}
-	//@AfterMethod()
-	public void ccloseWindow(){
-		
+	quit();	
 	}
 	
 	

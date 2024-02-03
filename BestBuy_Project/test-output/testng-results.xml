@@ -2,25 +2,32 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-04T00:32:43 IST" name="Suite" finished-at="2024-02-04T00:32:55 IST" duration-ms="11808">
+  <suite started-at="2024-02-04T03:34:56 IST" name="Suite" finished-at="2024-02-04T03:35:07 IST" duration-ms="11287">
     <groups>
-      <group name="invalidUrl">
-        <method signature="InvalidUrlTest.testMissingProtocol(java.lang.String)[pri:1, instance:scratchTest.InvalidUrlTest@792b749c]" name="testMissingProtocol" class="scratchTest.InvalidUrlTest"/>
-        <method signature="InvalidUrlTest.testInvalidProtocol(java.lang.String)[pri:2, instance:scratchTest.InvalidUrlTest@792b749c]" name="testInvalidProtocol" class="scratchTest.InvalidUrlTest"/>
-        <method signature="InvalidUrlTest.testOtherValidDomain(java.lang.String)[pri:3, instance:scratchTest.InvalidUrlTest@792b749c]" name="testOtherValidDomain" class="scratchTest.InvalidUrlTest"/>
-      </group> <!-- invalidUrl -->
     </groups>
-    <test started-at="2024-02-04T00:32:43 IST" name="Test" finished-at="2024-02-04T00:32:55 IST" duration-ms="11808">
+    <test started-at="2024-02-04T03:34:56 IST" name="Test" finished-at="2024-02-04T03:35:07 IST" duration-ms="11287">
       <class name="scratchTest.InvalidUrlTest">
-        <test-method is-config="true" signature="propertiesLoad()[pri:0, instance:scratchTest.InvalidUrlTest@792b749c]" started-at="2024-02-04T00:32:43 IST" name="propertiesLoad" finished-at="2024-02-04T00:32:43 IST" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="propertiesLoad()[pri:0, instance:scratchTest.InvalidUrlTest@433defed]" started-at="2024-02-04T03:34:56 IST" name="propertiesLoad" finished-at="2024-02-04T03:34:56 IST" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- propertiesLoad -->
-        <test-method is-config="true" signature="skip()[pri:0, instance:scratchTest.InvalidUrlTest@792b749c]" started-at="2024-02-04T00:32:43 IST" name="skip" finished-at="2024-02-04T00:32:43 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:scratchTest.InvalidUrlTest@433defed]" started-at="2024-02-04T03:34:56 IST" name="launchBrowser" finished-at="2024-02-04T03:34:56 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.bestbuy.com/?intl=nosplash]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- skip -->
-        <test-method signature="testMissingProtocol(java.lang.String)[pri:1, instance:scratchTest.InvalidUrlTest@792b749c]" started-at="2024-02-04T00:32:43 IST" name="testMissingProtocol" finished-at="2024-02-04T00:32:45 IST" duration-ms="1994" status="PASS">
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="testMissingProtocol(java.lang.String)[pri:1, instance:scratchTest.InvalidUrlTest@433defed]" started-at="2024-02-04T03:34:56 IST" name="testMissingProtocol" finished-at="2024-02-04T03:34:58 IST" duration-ms="1991" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -31,11 +38,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMissingProtocol -->
-        <test-method is-config="true" signature="closeWindow()[pri:0, instance:scratchTest.InvalidUrlTest@792b749c]" started-at="2024-02-04T00:32:45 IST" name="closeWindow" finished-at="2024-02-04T00:32:45 IST" duration-ms="250" status="PASS">
+        <test-method is-config="true" signature="closeWindow()[pri:0, instance:scratchTest.InvalidUrlTest@433defed]" started-at="2024-02-04T03:34:58 IST" name="closeWindow" finished-at="2024-02-04T03:34:58 IST" duration-ms="189" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeWindow -->
-        <test-method signature="testInvalidProtocol(java.lang.String)[pri:2, instance:scratchTest.InvalidUrlTest@792b749c]" started-at="2024-02-04T00:32:45 IST" name="testInvalidProtocol" finished-at="2024-02-04T00:32:47 IST" duration-ms="1442" status="PASS">
+        <test-method signature="testInvalidProtocol(java.lang.String)[pri:2, instance:scratchTest.InvalidUrlTest@433defed]" started-at="2024-02-04T03:34:58 IST" name="testInvalidProtocol" finished-at="2024-02-04T03:34:59 IST" duration-ms="1429" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -46,15 +53,43 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testInvalidProtocol -->
-        <test-method is-config="true" signature="skip()[pri:0, instance:scratchTest.InvalidUrlTest@792b749c]" started-at="2024-02-04T00:32:45 IST" name="skip" finished-at="2024-02-04T00:32:45 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:scratchTest.InvalidUrlTest@433defed]" started-at="2024-02-04T03:34:58 IST" name="launchBrowser" finished-at="2024-02-04T03:34:58 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.bestbuy.com/?intl=nosplash]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- skip -->
-        <test-method is-config="true" signature="closeWindow()[pri:0, instance:scratchTest.InvalidUrlTest@792b749c]" started-at="2024-02-04T00:32:47 IST" name="closeWindow" finished-at="2024-02-04T00:32:47 IST" duration-ms="273" status="PASS">
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="closeWindow()[pri:0, instance:scratchTest.InvalidUrlTest@433defed]" started-at="2024-02-04T03:34:59 IST" name="closeWindow" finished-at="2024-02-04T03:34:59 IST" duration-ms="203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeWindow -->
-        <test-method signature="testOtherValidDomain(java.lang.String)[pri:3, instance:scratchTest.InvalidUrlTest@792b749c]" started-at="2024-02-04T00:32:47 IST" name="testOtherValidDomain" finished-at="2024-02-04T00:32:55 IST" duration-ms="7528" status="PASS">
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:scratchTest.InvalidUrlTest@433defed]" started-at="2024-02-04T03:34:59 IST" name="launchBrowser" finished-at="2024-02-04T03:34:59 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.bestbuy.com/?intl=nosplash]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="testOtherValidDomain(java.lang.String)[pri:3, instance:scratchTest.InvalidUrlTest@433defed]" started-at="2024-02-04T03:34:59 IST" name="testOtherValidDomain" finished-at="2024-02-04T03:35:07 IST" duration-ms="7231" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -65,11 +100,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testOtherValidDomain -->
-        <test-method is-config="true" signature="skip()[pri:0, instance:scratchTest.InvalidUrlTest@792b749c]" started-at="2024-02-04T00:32:47 IST" name="skip" finished-at="2024-02-04T00:32:47 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- skip -->
-        <test-method is-config="true" signature="closeWindow()[pri:0, instance:scratchTest.InvalidUrlTest@792b749c]" started-at="2024-02-04T00:32:55 IST" name="closeWindow" finished-at="2024-02-04T00:32:55 IST" duration-ms="254" status="PASS">
+        <test-method is-config="true" signature="closeWindow()[pri:0, instance:scratchTest.InvalidUrlTest@433defed]" started-at="2024-02-04T03:35:07 IST" name="closeWindow" finished-at="2024-02-04T03:35:07 IST" duration-ms="190" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeWindow -->

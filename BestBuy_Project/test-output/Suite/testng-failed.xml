@@ -3,21 +3,15 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <parameter name="browser" value="chrome"/>
   <test thread-count="5" name="Test(failed)">
-    <parameter name="url" value="https://www.bestbuy.com"/>
-    <groups>
-      <run>
-        <include name="invalidUrl"/>
-      </run>
-    </groups>
     <classes>
       <class name="scratchTest.InvalidUrlTest">
         <methods>
           <include name="propertiesLoad"/>
           <include name="testMissingProtocol"/>
+          <include name="launchBrowser"/>
           <include name="closeWindow"/>
-          <include name="testInvalidProtocol" invocation-numbers="0"/>
+          <include name="testInvalidProtocol"/>
           <include name="testOtherValidDomain"/>
-          <include name="skip"/>
         </methods>
       </class> <!-- scratchTest.InvalidUrlTest -->
     </classes>

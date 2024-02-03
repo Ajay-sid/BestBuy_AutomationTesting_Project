@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>D:\BestBuy_Project\BestBuy_Project\t.xml</span>
+                    <span>D:\BestBuy_Project\BestBuy_Project\InvalidUrl.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Suite" class="navigator-link ">
-                    <span>1 group</span>
+                    <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -163,7 +163,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\BestBuy_Project\BestBuy_Project\t.xml</span>
+            <span class="header-content">D:\BestBuy_Project\BestBuy_Project\InvalidUrl.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -172,12 +172,7 @@
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
   &lt;test thread-count=&quot;1&quot; name=&quot;Test&quot;&gt;
-    &lt;parameter name=&quot;url&quot; value=&quot;https://www.bestbuy.com&quot;/&gt;
-    &lt;groups&gt;
-      &lt;run&gt;
-        &lt;include name=&quot;invalidUrl&quot;/&gt;
-      &lt;/run&gt;
-    &lt;/groups&gt;
+    &lt;parameter name=&quot;url&quot; value=&quot;https://www.bestbuy.com/?intl=nosplash&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;scratchTest.InvalidUrlTest&quot;/&gt;
     &lt;/classes&gt;
@@ -203,22 +198,6 @@
             <span class="header-content">Groups for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="test-group">
-              <span class="test-group-name">invalidUrl</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">testInvalidProtocol</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">testMissingProtocol</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">testOtherValidDomain</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Suite" class="panel">
@@ -239,15 +218,15 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testOtherValidDomain')
 data.setCell(0, 2, 'scratchTest.InvalidUrlTest')
-data.setCell(0, 3, 7528);
+data.setCell(0, 3, 7231);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testMissingProtocol')
 data.setCell(1, 2, 'scratchTest.InvalidUrlTest')
-data.setCell(1, 3, 1994);
+data.setCell(1, 3, 1991);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testInvalidProtocol')
 data.setCell(2, 2, 'scratchTest.InvalidUrlTest')
-data.setCell(2, 3, 1442);
+data.setCell(2, 3, 1429);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -279,45 +258,45 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">scratchTest.InvalidUrlTest</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
+              <div class="configuration-test before">
                 <span class="method-name">propertiesLoad</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-class before -->
+              </div> <!-- configuration-test before -->
               <div class="configuration-method before">
-                <span class="method-name">skip</span>
-                <span class="method-start">24 ms</span>
+                <span class="method-name">launchBrowser(chrome, https://www.bestbuy.com/?intl=nosplash)</span>
+                <span class="method-start">34 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testMissingProtocol(chrome)</span>
-                <span class="method-start">25 ms</span>
+                <span class="method-start">36 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeWindow</span>
-                <span class="method-start">2022 ms</span>
+                <span class="method-start">2029 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">skip</span>
-                <span class="method-start">2277 ms</span>
-              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testInvalidProtocol(chrome)</span>
-                <span class="method-start">2277 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">closeWindow</span>
-                <span class="method-start">3722 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">testOtherValidDomain(chrome)</span>
-                <span class="method-start">3997 ms</span>
+                <span class="method-start">2220 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
-                <span class="method-name">skip</span>
-                <span class="method-start">3997 ms</span>
+                <span class="method-name">launchBrowser(chrome, https://www.bestbuy.com/?intl=nosplash)</span>
+                <span class="method-start">2220 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method after">
                 <span class="method-name">closeWindow</span>
-                <span class="method-start">11526 ms</span>
+                <span class="method-start">3652 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">launchBrowser(chrome, https://www.bestbuy.com/?intl=nosplash)</span>
+                <span class="method-start">3855 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testOtherValidDomain(chrome)</span>
+                <span class="method-start">3856 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeWindow</span>
+                <span class="method-start">11088 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<suite name="Failed suite [Validating Url]" guice-stage="DEVELOPMENT">
   <parameter name="browser" value="chrome"/>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Invalid Url Test(failed)">
+    <parameter name="url" value="https://www.bestbuy.com/?intl=nosplash"/>
     <classes>
       <class name="scratchTest.InvalidUrlTest">
         <methods>
           <include name="propertiesLoad"/>
           <include name="testMissingProtocol"/>
           <include name="launchBrowser"/>
-          <include name="closeWindow"/>
+          <include name="ccloseWindow"/>
           <include name="testInvalidProtocol"/>
           <include name="testOtherValidDomain"/>
         </methods>
       </class> <!-- scratchTest.InvalidUrlTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Invalid Url Test(failed) -->
+</suite> <!-- Failed suite [Validating Url] -->

@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Feb 03 21:15:36 IST 2024</td>
+<td>Started on:</td><td>Sun Feb 04 02:36:50 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (61 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (824 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,10 +76,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='scratchTest.InvalidUrlTest.testOtherValidDomain()'><b>testOtherValidDomain</b><br>Test class: scratchTest.InvalidUrlTest</td>
+<td title='scratchTest.ValidateUrl.validUrl()'><b>validUrl</b><br>Test class: scratchTest.ValidateUrl</td>
 <td><div><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by @Test on method testOtherValidDomain but has not been marked @Optional or defined
-in C:\Users\ajays\AppData\Local\Temp\testng-eclipse--2115089384\testng-customsuite.xml
+Parameter &apos;browser&apos; is required by @Test on method validUrl but has not been marked @Optional or defined
+in C:\Users\ajays\AppData\Local\Temp\testng-eclipse--1547001832\testng-customsuite.xml
 	at org.testng.internal.Parameters.createParams(Parameters.java:267)
 	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
 	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
@@ -107,10 +107,10 @@ in C:\Users\ajays\AppData\Local\Temp\testng-eclipse--2115089384\testng-customsui
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace839998248", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace839998248'><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by @Test on method testOtherValidDomain but has not been marked @Optional or defined
-in C:\Users\ajays\AppData\Local\Temp\testng-eclipse--2115089384\testng-customsuite.xml
+</pre></div><a href='#' onClick='toggleBox("stack-trace366916060", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace366916060'><pre>org.testng.TestNGException: 
+Parameter &apos;browser&apos; is required by @Test on method validUrl but has not been marked @Optional or defined
+in C:\Users\ajays\AppData\Local\Temp\testng-eclipse--1547001832\testng-customsuite.xml
 	at org.testng.internal.Parameters.createParams(Parameters.java:267)
 	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
 	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
@@ -140,20 +140,18 @@ in C:\Users\ajays\AppData\Local\Temp\testng-eclipse--2115089384\testng-customsui
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>scratchTest.InvalidUrlTest@2d901eb0</td></tr>
+<td>scratchTest.ValidateUrl@61c4eee0</td></tr>
 <tr>
-<td title='scratchTest.InvalidUrlTest.testMissingProtocol()'><b>testMissingProtocol</b><br>Test class: scratchTest.InvalidUrlTest</td>
-<td><div><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by @Test on method testMissingProtocol but has not been marked @Optional or defined
-in C:\Users\ajays\AppData\Local\Temp\testng-eclipse--2115089384\testng-customsuite.xml
-	at org.testng.internal.Parameters.createParams(Parameters.java:267)
-	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:879)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:728)
-	at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
-	at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:911)
+<td title='scratchTest.ValidateUrl.InvalidUrl()'><b>InvalidUrl</b><br>Test class: scratchTest.ValidateUrl</td>
+<td><div><pre>org.testng.internal.reflect.MethodMatcherException: 
+[public void scratchTest.ValidateUrl.InvalidUrl(java.lang.String,java.lang.String) throws java.io.IOException] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: InvalidUrl([java.lang.String arg0, java.lang.String arg1])
+Arguments: [(java.lang.String) https://www.google.com]
+	at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:46)
+	at org.testng.internal.Parameters.injectParameters(Parameters.java:909)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:37)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -173,18 +171,16 @@ in C:\Users\ajays\AppData\Local\Temp\testng-eclipse--2115089384\testng-customsui
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1048098469", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1048098469'><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by @Test on method testMissingProtocol but has not been marked @Optional or defined
-in C:\Users\ajays\AppData\Local\Temp\testng-eclipse--2115089384\testng-customsuite.xml
-	at org.testng.internal.Parameters.createParams(Parameters.java:267)
-	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:684)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:879)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:728)
-	at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
-	at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:911)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1616438581", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1616438581'><pre>org.testng.internal.reflect.MethodMatcherException: 
+[public void scratchTest.ValidateUrl.InvalidUrl(java.lang.String,java.lang.String) throws java.io.IOException] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: InvalidUrl([java.lang.String arg0, java.lang.String arg1])
+Arguments: [(java.lang.String) https://www.google.com]
+	at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:46)
+	at org.testng.internal.Parameters.injectParameters(Parameters.java:909)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:37)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -206,7 +202,7 @@ in C:\Users\ajays\AppData\Local\Temp\testng-eclipse--2115089384\testng-customsui
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>scratchTest.InvalidUrlTest@2d901eb0</td></tr>
+<td>scratchTest.ValidateUrl@61c4eee0</td></tr>
 </table><p>
 </body>
 </html>

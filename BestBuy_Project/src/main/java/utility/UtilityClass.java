@@ -37,6 +37,7 @@ public class UtilityClass {
 	public File file;
 	public Properties prop;
 	public FileInputStream fis;
+	public String excelFile;
 	
 	
 
@@ -63,10 +64,10 @@ public class UtilityClass {
 		driver.manage().window().maximize();
 		try {
 		driver.get(url);
-		WebElement us = driver.findElement(By.xpath("//div[@lang='en']/div[@class='country-selection']/a[@class='us-link']"));
-		elementClick(us);
+		//WebElement us = driver.findElement(By.xpath("//div[@lang='en']/div[@class='country-selection']/a[@class='us-link']"));
+		//elementClick(us);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		driver.switchTo().defaultContent();
+		//driver.switchTo().defaultContent();
 		
 		}catch(Exception e) {
 			
@@ -81,7 +82,11 @@ public class UtilityClass {
 			HttpURLConnection huc =(HttpURLConnection)(new URL(link).openConnection());
 			huc.connect();
 			int code =huc.getResponseCode();
-			return  ""+code;
+			if(code>=400) {
+				return "Invalid";
+			}else {
+				return "valid";
+			}
 			
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
@@ -90,6 +95,7 @@ public class UtilityClass {
 			 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
 			return e.getMessage();
 		}
 		
@@ -97,11 +103,30 @@ public class UtilityClass {
 		
 	}
 	
+	public String [] ReadSingle(String excelname) throws IOException {
+			
+		XSSFWorkbook book = new XSSFWorkbook("allData\\"+excelname+".xlsx");
+			XSSFSheet sheet = book.getSheetAt(0);
+
+			int rowCount = sheet.getLastRowNum();
+			String[] data =new String[rowCount];
+			for (int i=1;i<=rowCount;i++) {
+				XSSFRow row = sheet.getRow(i);
+				XSSFCell cell = row.getCell(0);
+				data[i-1]=cell.getStringCellValue();
+				
+			}
+			return data;
+			
+		
+	}
+	
+	
 		
 	// Excel data to array - Appache POI
 	public static String[][] ReadExcel(String excelname) throws IOException {
 
-		XSSFWorkbook book = new XSSFWorkbook("./data/" + excelname + ".xlsx");
+		XSSFWorkbook book = new XSSFWorkbook("/data/" + excelname + ".xlsx");
 
 		XSSFSheet sheet = book.getSheetAt(0);
 
