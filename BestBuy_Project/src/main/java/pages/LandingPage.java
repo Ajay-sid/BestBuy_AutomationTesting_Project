@@ -6,15 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 import base.ProjectSpec;
 
 
-public class LandingPage extends ProjectSpec {
+public class LandingPage extends AbstractComponents {
 	
 	public LandingPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-		header = new HeaderPage(driver);
-		footer = new FooterPage(driver);
-		
-		
+		super(driver);
 	}
 	
 	

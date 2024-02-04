@@ -26,14 +26,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import pages.FooterPage;
-import pages.HeaderPage;
-
 //BestBuy
 public class UtilityClass {
 	public WebDriver driver;
-	public HeaderPage header;
-	public FooterPage footer;
 	public File file;
 	public Properties prop;
 	public FileInputStream fis;

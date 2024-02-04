@@ -80,12 +80,12 @@ public class ProjectSpec extends UtilityClass implements ITestListener{
 	
 	@BeforeTest()
 	public void propertiesLoad() throws IOException {
-		System.out.println("Hi");
+		
 		 file = new File("src/main/java/property/data.properties");
 		 prop = new Properties();
 		 fis = new FileInputStream(file);
 		 prop.load(fis);
-		 System.out.println("Hi end");
+		 System.out.println("Property Loaded");
 	}
 	
 	@DataProvider(name="getSingleArrayData")
@@ -125,7 +125,7 @@ public class ProjectSpec extends UtilityClass implements ITestListener{
 	
 	
 	@AfterMethod()
-	public void closeWindow(){
+	public void tear(){
 	quit();	
 	}
 	
