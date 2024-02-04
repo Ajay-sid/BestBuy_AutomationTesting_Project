@@ -89,9 +89,17 @@ public class ProjectSpec extends UtilityClass implements ITestListener{
 	}
 	
 	@DataProvider(name="getSingleArrayData")
-	public String[] getData() throws IOException {
+	public String[] getSingleData() throws IOException {
 	return ReadSingle(excelFile) ;
 	
+	}
+
+	@DataProvider(name="getData")
+	public String[][] getData() throws IOException {
+
+		return  ReadExcel(excelFile);
+		
+		
 	}
 	
 	

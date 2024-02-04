@@ -3,7 +3,9 @@ package scratchTest;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -18,41 +20,23 @@ public class InvalidUrlTest extends ProjectSpec {
 		
 		
 	}
-	
-	
-	
-	@Parameters({"browser"})
-	@Test(priority=1)
-	public void testMissingProtocol(String browser) throws InterruptedException, IOException {
-//	testig with malformed url	
-		String link =prop.getProperty("missingProtocoll");
-		launch(browser,link);
-		String message = urlCheck(link);
-		Assert.assertEquals(message, "no protocol: www.bestbuy.com");	
-		
+	@BeforeClass
+	public void setup() {
+		System.out.println("excel");
+		excelFile = "InvalidUrl";
 	}
 	
 	
-	@Parameters({"browser"})
-	@Test(priority=2)
-	public void testInvalidProtocol(String browser) throws IOException {
-		launch(browser, prop.getProperty("invalidProtocoll"));
-		String message = urlCheck(prop.getProperty("invalidProtocoll"));
-		Assert.assertEquals(message, "unknown protocol: fttps");	
-		
-		
-	}
-
-	@Parameters({"browser"})
-	@Test(priority=3)
-	public void testOtherValidDomain(String browser) throws InterruptedException {
-		launch(browser,prop.getProperty("otherDomain"));
-		Thread.sleep(5000);
-		System.out.println(getPageTitle());
-		
-		Assert.assertNotEquals(getPageTitle(), "Best Buy | Official Online Store | Shop Now & Save");
-			
+	
+	
+	@Test(dataProvider="getData")
+	//Testing invalid URL format
+	public void testInvalidUrl(String url,String error) throws InterruptedException, IOException {
+		launch(prop.getProperty("browser"),url);
+		String message = urlCheck(url);
+		Assert.assertEquals(message,error);	
 		
 	}
+	
 
 }

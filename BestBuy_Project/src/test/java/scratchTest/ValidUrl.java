@@ -28,13 +28,15 @@ public class ValidUrl extends ProjectSpec {
 	
 	
 	
-	@BeforeTest()
+	@BeforeClass()
 	public void setup() {
-		excelFile = "InvalidUrl";
+		System.out.println("excel");
+		excelFile = "validUrl";
 	}
 	
 	@Parameters({"browser","url"})
 	@Test
+	//Testing BestBuy url
 	public void validUrl(String browser,String url) throws IOException {
 		launch(browser, url);
 		String msg = urlCheck(url);
@@ -44,17 +46,18 @@ public class ValidUrl extends ProjectSpec {
 	}
 	
 	
-	@Test(dataProvider="getSingleArrayData")
-	public void InvalidUrl(String url) throws IOException {
-		launch("chrome", url);
+	@Test(dataProvider="getData")
+	//Testing other domain URL 
+	public void OtherDomainValidUrl(String url,String title) throws IOException {
+		launch(prop.getProperty("browser"), url);
 		String msg = urlCheck(url);
 		System.out.println(getPageTitle());
-		Assert.assertNotEquals(getPageTitle(),prop.getProperty("BestBuyTitle"));
+		Assert.assertNotEquals(getPageTitle(),title);
 		Assert.assertEquals(msg,"valid");
 		
 	}
 	
-	
+
 	
 	
 

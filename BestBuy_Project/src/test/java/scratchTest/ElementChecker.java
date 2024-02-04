@@ -15,16 +15,35 @@ public static void main(String[] args) throws InterruptedException {
 	WebDriver driver = new ChromeDriver();
 	driver.manage().window().maximize();
 	
-	driver.get("https://www.bestbuy.com");
-	WebElement us = driver.findElement(By.xpath("//div[@lang='en']/div[@class='country-selection']/a[@class='us-link']"));
-	us.click();
+	driver.get("https://www.bestbuy.com/?intl=nosplash");
+	//
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	Thread.sleep(5000);
 	driver.switchTo().defaultContent();
-	driver.findElement(By.xpath("//a[@title='BestBuy.com']")).click();
-	Thread.sleep(5000);
-	driver.close();
+	//bestbuy logo
+//	driver.findElement(By.xpath("//a[@title='BestBuy.com']")).click();
+//	Thread.sleep(5000);
+//	driver.close();
 	
+	//cartLogo
+	//driver.findElement(By.xpath("//span[text()='Cart']")).click();
 	
+	//menu
+	//driver.findElement(By.xpath("//*[local-name()='svg' and @class='open-hamburger-icon' ]")).click();
+	
+	//Search input
+	//driver.findElement(By.name("st")).sendKeys("Jade");
+	//search button
+	//driver.findElement(By.xpath("//button[@title='submit search']")).click();
+	
+	//acount
+	driver.findElement(By.id("account-menu-account-button")).click();
+	driver.findElement(By.xpath("//a[text()='Create Account']")).click();
+	
+
+
+
 }
+
+
 }

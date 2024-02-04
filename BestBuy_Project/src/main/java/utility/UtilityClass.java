@@ -126,7 +126,7 @@ public class UtilityClass {
 	// Excel data to array - Appache POI
 	public static String[][] ReadExcel(String excelname) throws IOException {
 
-		XSSFWorkbook book = new XSSFWorkbook("/data/" + excelname + ".xlsx");
+		XSSFWorkbook book = new XSSFWorkbook("allData\\" + excelname + ".xlsx");
 
 		XSSFSheet sheet = book.getSheetAt(0);
 

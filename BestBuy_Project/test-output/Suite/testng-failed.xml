@@ -3,15 +3,15 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <parameter name="browser" value="chrome"/>
   <test thread-count="5" name="Test(failed)">
+    <parameter name="url" value="https://www.bestbuy.com/?intl=nosplash"/>
     <classes>
       <class name="scratchTest.InvalidUrlTest">
         <methods>
           <include name="propertiesLoad"/>
-          <include name="testMissingProtocol"/>
           <include name="launchBrowser"/>
           <include name="closeWindow"/>
-          <include name="testInvalidProtocol"/>
-          <include name="testOtherValidDomain"/>
+          <include name="setup"/>
+          <include name="testInvalidUrl" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- scratchTest.InvalidUrlTest -->
     </classes>
