@@ -5,14 +5,16 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://www.bestbuy.com/?intl=nosplash"/>
     <classes>
-      <class name="scratchTest.LoginTest">
+      <class name="scratchTest.MenuValidation">
         <methods>
           <include name="propertiesLoad"/>
-          <include name="tear"/>
-          <include name="login"/>
           <include name="launchBrowser"/>
+          <include name="menuLinkValidationTest" invocation-numbers="64 1 65 66 3 67 68 5 7 9 11 13 15 17 19 21 23 25 28 30 32 34 36 38 40 42 44 46 48 50 54 55 56 57 58 59 60 61 62 63"/>
+          <include name="teardown"/>
+          <include name="setUp"/>
+          <include name="tear"/>
         </methods>
-      </class> <!-- scratchTest.LoginTest -->
+      </class> <!-- scratchTest.MenuValidation -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

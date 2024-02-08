@@ -9,46 +9,25 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">61,207</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">16</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">137,288</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">scratchTest.LoginTest</td><td><a href="#m0">login</a></td><td rowspan="1">1707086735411</td><td rowspan="1">50342</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="16">scratchTest.MenuValidation</td><td><a href="#m0">menuButtonTest</a></td><td rowspan="1">1707428905333</td><td rowspan="1">1436</td></tr><tr class="passedeven"><td><a href="#m1">menuLinkValidationTest</a></td><td rowspan="15">1707428926548</td><td rowspan="15">8760</td></tr><tr class="passedeven"><td><a href="#m2">menuLinkValidationTest</a></td></tr><tr class="passedeven"><td><a href="#m3">menuLinkValidationTest</a></td></tr><tr class="passedeven"><td><a href="#m4">menuLinkValidationTest</a></td></tr><tr class="passedeven"><td><a href="#m5">menuLinkValidationTest</a></td></tr><tr class="passedeven"><td><a href="#m6">menuLinkValidationTest</a></td></tr><tr class="passedeven"><td><a href="#m7">menuLinkValidationTest</a></td></tr><tr class="passedeven"><td><a href="#m8">menuLinkValidationTest</a></td></tr><tr class="passedeven"><td><a href="#m9">menuLinkValidationTest</a></td></tr><tr class="passedeven"><td><a href="#m10">menuLinkValidationTest</a></td></tr><tr class="passedeven"><td><a href="#m11">menuLinkValidationTest</a></td></tr><tr class="passedeven"><td><a href="#m12">menuLinkValidationTest</a></td></tr><tr class="passedeven"><td><a href="#m13">menuLinkValidationTest</a></td></tr><tr class="passedeven"><td><a href="#m14">menuLinkValidationTest</a></td></tr><tr class="passedeven"><td><a href="#m15">menuLinkValidationTest</a></td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">scratchTest.LoginTest#login</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[text()=&apos;Skip for now&apos;]&quot;}
-  (Session info: chrome=121.0.6167.140)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.17.0&apos;, revision: &apos;e52b1be057*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0c330a1ee75b89fca65cc693cd73e351, findElement {using=xpath, value=//button[text()=&apos;Skip for now&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.140, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\ajays\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52046}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52046/devtoo..., se:cdpVersion: 121.0.6167.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0c330a1ee75b89fca65cc693cd73e351
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:134)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy15.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:462)
-	at utility.UtilityClass.elementClick(UtilityClass.java:174)
-	at pages.Login.skipMobileVerification(Login.java:43)
-	at scratchTest.LoginTest.login(LoginTest.java:20)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">scratchTest.MenuValidation#menuButtonTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Deals</td><td>Wearable Technology</td><td>Top Deals on Wearable Technology - Best Buy</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Support &amp; Services</td><td>Remote Support</td><td>Remote Support: Geek Squad - Best Buy</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Support &amp; Services</td><td>Visit our Support Center</td><td>Best Buy Support &amp; Customer Service</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Deals</td><td>Exclusive Member Deals</td><td>Top Deals on Plus and Total Exclusive Member Offers – Best Buy</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Support &amp; Services</td><td>Cell Phone Services</td><td>Cell Phone Services and Repair – Best Buy</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Brands</td><td>HP</td><td>HP - Best Buy</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Brands</td><td>Apple</td><td>Apple – Best Buy</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Brands</td><td>Best Buy essentials</td><td>Best Buy Essentials - Best Buy</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Support &amp; Services</td><td>Find Replacement Parts</td><td>PartStore.com Parts and Accessories</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Deals</td><td>Top Deals</td><td>Top Deals and Featured Offers on Electronics - Best Buy</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Support &amp; Services</td><td>All Services</td><td>Services - Best Buy</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Deals</td><td>Car Electronics &amp; GPS</td><td>Top Deals on Car Electronics and GPS - Best Buy</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Brands</td><td>Yardbird</td><td>Yardbird – Best Buy</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Brands</td><td>All Brands</td><td>Name Brands - Best Buy</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">scratchTest.MenuValidation#menuLinkValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>Deals</td><td>Sales &amp; Promotions</td><td>Sales and Promotions at Best Buy: On Sale Electronics, Coupons and Promo Codes</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

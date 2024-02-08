@@ -8,7 +8,9 @@ import java.net.MalformedURLException;
 import java.net.SocketException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -23,6 +25,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -33,6 +36,8 @@ public class UtilityClass {
 	public Properties prop;
 	public FileInputStream fis;
 	public String excelFile;
+	public Actions action;
+	
 	
 	
 
@@ -59,8 +64,7 @@ public class UtilityClass {
 		driver.manage().window().maximize();
 		try {
 		driver.get(url);
-		//WebElement us = driver.findElement(By.xpath("//div[@lang='en']/div[@class='country-selection']/a[@class='us-link']"));
-		//elementClick(us);
+		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		//driver.switchTo().defaultContent();
 		
@@ -72,11 +76,12 @@ public class UtilityClass {
 	
 	public String urlCheck(String link) throws IOException {
 		
-		String msg;
+		
 		try {
 			HttpURLConnection huc =(HttpURLConnection)(new URL(link).openConnection());
 			huc.connect();
 			int code =huc.getResponseCode();
+			System.out.println(code);
 			if(code>=400) {
 				return "Invalid";
 			}else {
@@ -176,6 +181,21 @@ public class UtilityClass {
 		}
 		
 	}
+	public WebElement getElementFormList(List<WebElement> elements,String str) {
+//		
+		return  elements.stream().filter(m->m.getText().equalsIgnoreCase(str)).findAny().get();
+		
+		
+		
+		//WebElement elem=null;
+//		for(WebElement element :elements) {
+//			if(element.getText().equalsIgnoreCase(str)){
+//				elem=element;
+//				break;
+//			}
+//		}
+//		return elem;
+	}
 	
 	
 	//SendKeys
@@ -185,7 +205,10 @@ public class UtilityClass {
 		
 		
 	}
-	
+	//------------------------------------switch to--------------------------------//
+	public void switchWindow(String window) {
+		driver.switchTo().window(window);
+	}
 	
 	//Getting page Title
 	public String getPageTitle() {
@@ -212,6 +235,24 @@ public class UtilityClass {
     public void goForward() {
         driver.navigate().forward();
     }
-	
-
+    public String getWindowHandle() {
+        return driver.getWindowHandle();
+    }
+    
+    public Set<String> getWindowHandles() {
+        return driver.getWindowHandles();
+    }
+    
+    //-----------------------------Actions--------------------------------//
+    
+    public void actionElementClick(WebElement element) {
+    	action = new Actions(driver);
+    	action.moveToElement(element).click().build().perform();	
+    }
+    
+    public void scrollElement(WebElement element) {
+    	action = new Actions(driver);
+    	action.scrollToElement(element).perform();
+    }
+    
 }

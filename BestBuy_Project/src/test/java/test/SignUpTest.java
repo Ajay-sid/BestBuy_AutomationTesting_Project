@@ -1,4 +1,4 @@
-package scratchTest;
+package test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
