@@ -14,7 +14,12 @@ import org.openqa.selenium.support.PageFactory;
 import base.ProjectSpec;
 
 public class AbstractComponents extends ProjectSpec {
-
+	
+	@FindBy(id="gh-search-input")
+	WebElement search;
+	
+	@FindBy(xpath="//button[@title='submit search']")
+	WebElement searchButton;
 	
 	//return to previous page link
 	@FindBy(xpath="//a[text()='Return to previous page']")	
@@ -36,6 +41,11 @@ public class AbstractComponents extends ProjectSpec {
 	@FindBy(xpath="//a[text()='Sign In']")
 	WebElement SignIn;
 	
+	//TopMenu
+	@FindBy(xpath="//ul[@class='bottom-nav-left lv']/li")
+	List<WebElement> topMenu;
+	
+	
 	//Menu 
 	@FindBy(xpath="//button[text()='Menu']")
 	WebElement MenuIcon;
@@ -44,6 +54,7 @@ public class AbstractComponents extends ProjectSpec {
 	@FindBy(xpath="//button[@class='c-button-unstyled top-four v-fw-medium']")
 	List<WebElement> MainMenu;
 	
+	//submenu in Main Menu
 	@FindBy(xpath="//ul[@class='hamburger-menu-flyout-list hamburger-menu-flyout-sidecar-list']/li/a[@class='hamburger-menu-flyout-list-item  ']")
 	List<WebElement> SubMenu;
 	
@@ -52,6 +63,11 @@ public class AbstractComponents extends ProjectSpec {
 	//
 	@FindBy(xpath="//button[text()='Close']")
 	WebElement closeMenu;
+
+	
+	
+	@FindBy(xpath="//footer[@id='footer']")
+	WebElement footer;
 	
 	
 	public AbstractComponents(WebDriver driver) {
@@ -59,27 +75,32 @@ public class AbstractComponents extends ProjectSpec {
         PageFactory.initElements(driver, this);
     
 	}
-	public void MenuIconClick() {
+	public AbstractComponents MenuIconClick() {
 		elementClick(MenuIcon);
+		return this;
 	}
-	public WebElement MainMenu(String str) {
+	public WebElement getMainMenu(String str) {
 		return getElementFormList(MainMenu, str); 
-	}
-	public List<WebElement> getAllMenu() {
-		return MainMenu;
-		
 		
 	}
-	public List<WebElement> getAllSubMenu() {
-		
-		return SubMenu;
+	public WebElement getTopMenu(String str) {
+		return getElementFormList(topMenu, str);
 	}
-	
-//	public WebElement allMainMenu(String str) {
+//	public List<WebElement> getAllMenu() {
+//		return MainMenu;
 //		
-//		return getElementFormList(allMainMenu,str);
 //		
 //	}
+//	public List<WebElement> getAllSubMenu() {
+//		
+//		return SubMenu;
+//	}
+	
+	public WebElement getSubMenu(String str) {
+		
+		return getElementFormList(SubMenu,str);
+		
+	}
 	public void scrollToClose() {
 		scrollElement(closeMenu);
 
@@ -106,11 +127,20 @@ public class AbstractComponents extends ProjectSpec {
 	}
 	
 	
+	public List<WebElement> getFooterLink() {
+		return footer.findElements(By.tagName("a"));
+	}
 	
+	public LandingPage searchItem(String str) {
+		sendKeys(search, str);
+		elementClick(searchButton);
+		return  new LandingPage(driver);
+	}
 	
-	
-	
-	
+	public CartPage goToCartTop() {
+		elementClick(cart);
+		return new CartPage(driver);
+	}
 	
 	
 }

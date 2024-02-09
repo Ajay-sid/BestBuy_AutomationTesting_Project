@@ -115,7 +115,7 @@ public class ProjectSpec extends UtilityClass implements ITestListener{
 	public void launchBrowser(String browser,String url) {
 		 
 		launch(browser, url);
-		System.out.println("browser Launched");
+		System.out.println("browser Launched - before Method");
 		
 	}
 	

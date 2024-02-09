@@ -18,6 +18,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -83,9 +84,9 @@ public class UtilityClass {
 			int code =huc.getResponseCode();
 			System.out.println(code);
 			if(code>=400) {
-				return "Invalid";
+				return link+"is Broken";
 			}else {
-				return "valid";
+				return link+" is valid";
 			}
 			
 		} catch (MalformedURLException e) {
@@ -253,6 +254,10 @@ public class UtilityClass {
     public void scrollElement(WebElement element) {
     	action = new Actions(driver);
     	action.scrollToElement(element).perform();
+    }
+    public void clickElementInNewWindow(WebElement element) {
+    	action=new Actions(driver);
+		action.moveToElement(element).keyDown(Keys.CONTROL).click().build().perform();
     }
     
 }

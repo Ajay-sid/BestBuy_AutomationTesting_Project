@@ -31,87 +31,30 @@ public static void main(String[] args) throws InterruptedException {
 	
 	driver.get("https://www.bestbuy.com/?intl=nosplash");
 	//
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-	Thread.sleep(5000);
-	driver.switchTo().defaultContent();
-	//bestbuy logo
-//	driver.findElement(By.xpath("//a[@title='BestBuy.com']")).click();
-//	Thread.sleep(5000);
-//	driver.close();
-	
-	//cartLogo
-	//driver.findElement(By.xpath("//span[text()='Cart']")).click();
-	
-	//menu
-	int sum=0;
-	int count =0;
-	driver.findElement(By.xpath("//*[local-name()='svg' and @class='open-hamburger-icon' ]")).click();
-	List<WebElement> menulist= driver.findElements(By.xpath("//button[@class='c-button-unstyled top-four v-fw-medium']"));
-	
-	String ctrlClick=Keys.chord(Keys.CONTROL,Keys.ENTER);
-	String parentWindow= driver.getWindowHandle();
-	Actions action= new Actions(driver);
-	
-	for(WebElement ele : menulist) {
-		//System.out.println(ele.getText());
-		ele.click();
-		WebElement elee = driver.findElement(By.xpath("//button[text()='Close']"));
-		action.scrollToElement(elee).perform();
-		List<WebElement> subMenu = driver.findElements(By.xpath("//ul[@class='hamburger-menu-flyout-list hamburger-menu-flyout-sidecar-list']/li/a[@class='hamburger-menu-flyout-list-item  ']"));
-		sum+=subMenu.size();
-		for(WebElement element:subMenu) {
-//			try 
-			System.out.println(element.getText());
-//				
-//		
-//			
-//			action.moveToElement(element).keyDown(Keys.CONTROL).click().build().perform();
-//			System.out.println(element.getText());
-//			for(String s : driver.getWindowHandles()) {
-//				driver.switchTo().window(s);
-//			}
-//			System.out.println(driver.getTitle());
-//			System.out.println("---------------------------------------------------------------");
-//			driver.close();
-//			driver.switchTo().window(parentWindow);
-//			count++;
-//			}catch(ElementNotInteractableException e) {
-//				System.out.println(e.getMessage());
-//				System.out.println("---------------------------------------------------------------");
-//			}
-		}
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+	try {
+		driver.switchTo().frame("tag-sandbox");
+		driver.findElement(By.id("survey_invite_no")).click();
 		
+	}catch(Exception e) {
+	}finally {
+		driver.switchTo().defaultContent();
 	}
 	
-//	public void menuLinkValidationTest(String mainMenu,String subMenu,String title) throws InterruptedException {
-//		LandingPage lp=new LandingPage(driver);
-//		String parentwindow=getWindowHandle();
-//		
-//		action = new Actions(driver);
-//		String ctrl = Keys.chord(Keys.CONTROL,Keys.ENTER);
-//		actionElementClick(lp.MainMenu(mainMenu));
-//		
-//		action.moveToElement(lp.allMainMenu(subMenu)).keyDown(Keys.CONTROL).click().build().perform();
-//		
-//		for(String s : getWindowHandles()) {
-//			switchWindow(s);
-//		}
-//		System.out.println(getPageTitle());	
-//		close();
-//		switchWindow(parentwindow);
-//		actionElementClick(lp.MainMenu(mainMenu));
-//	}
-			
+	driver.findElement(By.id("gh-search-input")).sendKeys("DJI - Mini 4");
+	driver.findElement(By.xpath("//button[@title='submit search']")).click();
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//ol[@class='sku-item-list']//*[@class='column-left'])[1]")));
 	
-	//Search input
-	//driver.findElement(By.name("st")).sendKeys("Jade");
-	//search button
-	//driver.findElement(By.xpath("//button[@title='submit search']")).click();
+//	List<WebElement> element = driver.findElements(By.xpath("//ol[@class='sku-item-list']//li//div[@class='column-left']"));
+//	element.get(0).click();
+	//select first element
+	driver.findElement(By.xpath("(//ol[@class='sku-item-list']//*[@class='column-left'])[1]")).click();
+	////ol[@class="sku-item-list"]/li
+	Thread.sleep(5000);
+	driver.findElement(By.xpath("//div[contains(@class,'quick-assessment')]//*[text()='Add to Cart']")).click();
 	
-	//acount
-	//driver.findElement(By.id("account-menu-account-button")).click();
-	//driver.findElement(By.xpath("//a[text()='Create Account']")).click();
-	
+
 
 
 
