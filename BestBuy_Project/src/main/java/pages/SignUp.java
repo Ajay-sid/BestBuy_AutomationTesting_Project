@@ -1,14 +1,22 @@
 package pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class SignUp extends AbstractComponents {
-
 		
-	 	@FindBy(id = "firstName")
+		@FindBy(xpath="//div[@class='tb-validation']")
+		List<WebElement> fieldErrorText;
+		
+	 	public List<WebElement> getFieldErrorText() {
+			return fieldErrorText;
+		}
+
+		@FindBy(id = "firstName")
 	    private WebElement firstNameInput;
 
 	    @FindBy(id = "lastName")
@@ -19,15 +27,27 @@ public class SignUp extends AbstractComponents {
 
 	    @FindBy(id = "fld-p1")
 	    private WebElement passwordInput;
+	    
+	    public WebElement getPasswordInput() {
+	    	return passwordInput;
+	    }
 
-	    @FindBy(id = "reenterPassword")
+	    public WebElement getConfirmPasswordInput() {
+			return confirmPasswordInput;
+		}
+
+		@FindBy(id = "reenterPassword")
 	    private WebElement confirmPasswordInput;
 	    
 	    @FindBy(id = "phone")
 	    private WebElement mobileNumberInput;
 	    
 	
-	    @FindBy(xpath = "//button[text()='Create an Account']")
+	    public WebElement getMobileNumberInput() {
+			return mobileNumberInput;
+		}
+
+		@FindBy(xpath = "//button[text()='Create an Account']")
 	    private WebElement createAccountButton;
 	    
 	    //constructor
@@ -73,9 +93,17 @@ public class SignUp extends AbstractComponents {
 	        return this;
 	    }
 	
+	    public SignUp clickAllTextField() {
+	    	firstNameInput.click();
+	    	lastNameInput.click();
+	    	emailInput.click();
+	    	passwordInput.click();
+	    	confirmPasswordInput.click();
+	    	mobileNumberInput.click();
+	    	return this;
+	    }
 	
-	
-	
+	    
 	
 	
 	

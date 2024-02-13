@@ -5,10 +5,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestContext;
@@ -26,59 +31,35 @@ import utility.UtilityClass;
 public class ProjectSpec extends UtilityClass implements ITestListener{
 	
 	
-	String res;
-	@Override
-	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
-		 res = result.getClass().getName();
-		System.out.println(res);
-	}
-
-
-	@Override
-	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
-	}
-
-
-	@Override
-	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
-	}
-
-
-	@Override
-	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
-	}
-
-
-	@Override
-	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		// TODO Auto-generated method stub
-	}
-
-
-	@Override
-	public void onTestFailedWithTimeout(ITestResult result) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void onStart(ITestContext context) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void onFinish(ITestContext context) {
-		// TODO Auto-generated method stub
-		
+	
+//	//@Override
+//	public void onTestFailure(ITestResult result) {
+//	captureScreenshot(result.getMethod().getMethodName()+".jpg");
+//		
+//		
+//	}
+	//Screenshot code for failed testcases
+	public void captureScreenshot(String fileName)  {
+		try {
+			//date
+			LocalDateTime myDateObj = LocalDateTime.now();
+			DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd_MM_yyyy_HHmmss");
+			screenShotFolderName = myDateObj.format(myFormatObj);
+			
+			String formattedDate = myDateObj.format(myFormatObj);
+			System.out.println("After formatting: " + formattedDate);
+			//screenshot code
+			File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			File destination = new File("./ScreenShots/"+screenShotFolderName+"/"+fileName);
+			FileUtils.copyFile(source, destination);
+			System.out.println("Screenshot saved successfully");
+		} catch (Exception e) {
+			System.out.println("Screenshot Failed!");
+			System.out.println(e.getMessage());
+		}
 	}
 	
+
 	@BeforeTest()
 	public void propertiesLoad() throws IOException {
 		
@@ -126,8 +107,11 @@ public class ProjectSpec extends UtilityClass implements ITestListener{
 	
 	
 	@AfterMethod()
-	public void tear(){
-	quit();	
+	public void tear(ITestResult result){
+		if(result.getStatus()==ITestResult.FAILURE) {
+			captureScreenshot(result.getTestContext().getName()+"_"+result.getMethod().getMethodName()+".jpg");
+		}
+	close();
 	}
 	
 	

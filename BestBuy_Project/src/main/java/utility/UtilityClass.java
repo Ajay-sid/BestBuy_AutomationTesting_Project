@@ -38,6 +38,7 @@ public class UtilityClass {
 	public FileInputStream fis;
 	public String excelFile;
 	public Actions action;
+	public String screenShotFolderName;
 	
 	
 	
@@ -84,9 +85,9 @@ public class UtilityClass {
 			int code =huc.getResponseCode();
 			System.out.println(code);
 			if(code>=400) {
-				return link+"is Broken";
+				return "Link is Broken";
 			}else {
-				return link+" is valid";
+				return "Link is valid";
 			}
 			
 		} catch (MalformedURLException e) {
@@ -201,11 +202,16 @@ public class UtilityClass {
 	
 	//SendKeys
 	public void sendKeys(WebElement element,String string) {
-		element.clear();
 		element.sendKeys(string);
 		
 		
 	}
+	public void tabOutofTextField(WebElement element) {
+		element.sendKeys(Keys.TAB);
+		
+		
+	}
+	
 	//------------------------------------switch to--------------------------------//
 	public void switchWindow(String window) {
 		driver.switchTo().window(window);

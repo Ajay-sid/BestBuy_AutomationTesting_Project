@@ -46,6 +46,10 @@ public class AbstractComponents extends ProjectSpec {
 	List<WebElement> topMenu;
 	
 	
+	public List<WebElement> getTopMenu() {
+		return topMenu;
+	}
+
 	//Menu 
 	@FindBy(xpath="//button[text()='Menu']")
 	WebElement MenuIcon;
@@ -58,7 +62,17 @@ public class AbstractComponents extends ProjectSpec {
 	@FindBy(xpath="//ul[@class='hamburger-menu-flyout-list hamburger-menu-flyout-sidecar-list']/li/a[@class='hamburger-menu-flyout-list-item  ']")
 	List<WebElement> SubMenu;
 	
+	//Shop by Department
+	@FindBy(xpath="//button[@class='c-button-unstyled hamburger-menu-flyout-list-item ']")
+	List<WebElement> shopByDepartmentMenu;
 	
+	//ShopByDepartment SubMenu
+	@FindBy(xpath="//button[@class='c-button-unstyled hamburger-menu-flyout-list-item ']")
+	List<WebElement> shopByDepartmentSubMenu;
+	
+	//ShopByDepartmentallSubmenu
+	@FindBy(xpath="//li[@class='liDropdownList']/a")
+	List<WebElement> shopByDepartmentAllSubMenu;
 	
 	//
 	@FindBy(xpath="//button[text()='Close']")
@@ -101,9 +115,26 @@ public class AbstractComponents extends ProjectSpec {
 		return getElementFormList(SubMenu,str);
 		
 	}
-	public void scrollToClose() {
+	
+	public WebElement getShopByDepartmentMenu(String str) {
+		System.out.println(shopByDepartmentMenu.stream().map(m->m.getText()).toList());
+		return getElementFormList(shopByDepartmentMenu,str);
+		
+	}
+	public WebElement getSBDsubMenu(String str) {
+		System.out.println(shopByDepartmentSubMenu.stream().map(m->m.getText()).toList());
+		return getElementFormList(shopByDepartmentSubMenu,str);
+		
+		
+		
+	}
+	public WebElement getSBDAllsubMenu(String str) {
+		System.out.println(shopByDepartmentAllSubMenu.stream().map(m->m.getText()).toList());
+		return getElementFormList(shopByDepartmentAllSubMenu,str);
+	}
+	public AbstractComponents scrollToClose() {
 		scrollElement(closeMenu);
-
+		return this;
 	}
 	
 	public LandingPage returnToPrevPage() {

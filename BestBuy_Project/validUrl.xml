@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test">
-	 <parameter name="browser" value="chrome"></parameter> 
+<suite name="Suite" parallel="tests" thread-count="2">
+	
+	<parameter name="browser" value="chrome"></parameter> 
+  <test  name="validTest">
 	 <parameter name="url" value="https://www.bestbuy.com/?intl=nosplash"></parameter>
 	  
 	 <classes>
-		 <class name="test.ValidUrl"></class>
+		 <class name="test.ValidUrl">
+			 <methods>
+				 <include name="validUrlTest"></include>
+			 </methods> 
+		 </class>	 
+	 </classes> 
+  </test> <!-- Test -->
+  <test  name="InvalidTest">
+	 <parameter name="url" value="https://www.google.com"></parameter> 
+	 <classes>
+		 <class name="test.ValidUrl">
+			 <methods>
+				 <exclude name="validUrlTest"></exclude>
+			 </methods> 
+		 </class>	 
 	 </classes>
 	  
 	  

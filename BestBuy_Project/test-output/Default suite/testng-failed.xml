@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="scratchTest.E2EsearcAndAddItemToCart">
+      <class name="scratchTest.ShopByDepartment">
         <methods>
-          <include name="tear"/>
           <include name="propertiesLoad"/>
-          <include name="searchNonExistingItem"/>
+          <include name="shopByDepartmentTest"/>
+          <include name="tear"/>
           <include name="launchBrowser"/>
         </methods>
-      </class> <!-- scratchTest.E2EsearcAndAddItemToCart -->
+      </class> <!-- scratchTest.ShopByDepartment -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

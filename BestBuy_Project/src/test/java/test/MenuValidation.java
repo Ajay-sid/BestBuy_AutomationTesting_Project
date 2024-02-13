@@ -1,7 +1,11 @@
 package test;
 
 import java.time.Duration;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -19,28 +23,58 @@ import base.ProjectSpec;
 import pages.LandingPage;
 
 public class MenuValidation extends ProjectSpec{
-	
+	Map<String,String> topMenuTitles;
 	
 	@BeforeClass
 	public void setUp() {
 		excelFile="MenuLinkValidation";
-		
-		
+		topMenuTitles=new LinkedHashMap<String, String>();
+		topMenuTitles.put("Top Deals", "Top Deals and Featured Offers on Electronics");
+		topMenuTitles.put("Deal of the Day", "Deal of the Day: Electronics Deals");
+		topMenuTitles.put("Yes, Best Buy Sells That", "Yes, Best Buy Sells That");
+		topMenuTitles.put("My Best Buy Memberships","My Best Buy Memberships");
+		topMenuTitles.put("Credit Cards", "Best Buy Credit Card: Rewards & Financing");
+		topMenuTitles.put("Gift Cards", "Gifts Cards and E-Gift Cards - Best Buy");
+		topMenuTitles.put("Gift Ideas", "Gift Ideas 2024: Best Gifts to Give This Year");
 	}
 	
 	
 	
 	
-	@Test(priority=0)
+	@Test()
+	//Positive - Verifying menu is Displayed when clicked.
 	public void menuButtonTest() {
 		LandingPage lp=new LandingPage(driver);
 		lp.MenuIconClick();
-		WebElement menuSection = driver.findElement(By.xpath("//div[@class=\"hamburger-menu-flyout\"]"));
+		WebElement menuSection = driver.findElement(By.xpath("//div[@class='hamburger-menu-flyout']"));
 		Assert.assertTrue(menuSection.isDisplayed());
 		
 	}
 	
-	@Test(priority=1)
+	@Test
+	//Positive - Verifying functionality of the Top Menu
+	public void TopMenuFunctionality() {
+		LandingPage lp = new LandingPage(driver);
+		String parentWindow=getWindowHandle();
+		String elementText;
+		List<WebElement> MenuTop=lp.getTopMenu();
+		for(WebElement element :MenuTop) {
+			elementText = element.getText();
+			clickElementInNewWindow(element);
+			for(String s : getWindowHandles()) {
+				switchWindow(s);
+			}
+			System.out.println(getPageTitle());
+			Assert.assertTrue(getPageTitle().contains(topMenuTitles.get(elementText)));
+			close();
+			switchWindow(parentWindow);
+	
+		}
+	}
+	
+	
+	@Test()
+	//Verifing hamburger Menu function
 	public void menuItemsTest() {
 		LandingPage lp=new LandingPage(driver);
 		clickElementInNewWindow(lp.getTopMenu("Gift Cards"));
@@ -53,7 +87,8 @@ public class MenuValidation extends ProjectSpec{
 		
 	}
 
-	@Test(priority=2)
+	@Test()
+	//Don't know why i put this
 	public void InvalidmenuItemsTest() {
 		LandingPage lp=new LandingPage(driver);
 		clickElementInNewWindow(lp.getTopMenu("Top Deals"));
@@ -89,12 +124,7 @@ public class MenuValidation extends ProjectSpec{
 	
 	
 	
-	@Override
-	@AfterMethod
-	public void tear() {
-		quit();
-		System.out.println("After Method");
-	}
+
 	
 	@AfterClass
 	public void teardown() {

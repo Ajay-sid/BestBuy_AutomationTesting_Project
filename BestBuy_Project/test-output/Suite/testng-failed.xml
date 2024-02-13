@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
-    <parameter name="browser" value="chrome"/>
+<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="2" parallel="tests" name="validTest(failed)">
     <parameter name="url" value="https://www.bestbuy.com/?intl=nosplash"/>
     <classes>
-      <class name="scratchTest.E2EsearcAndAddItemToCart">
+      <class name="test.ValidUrl">
         <methods>
-          <include name="tear"/>
+          <include name="validUrlTest" invocation-numbers="0"/>
           <include name="propertiesLoad"/>
-          <include name="searchAndAddItemToCartTest"/>
-          <include name="searchItemTest"/>
           <include name="launchBrowser"/>
+          <include name="setup"/>
+          <include name="tear"/>
         </methods>
-      </class> <!-- scratchTest.E2EsearcAndAddItemToCart -->
+      </class> <!-- test.ValidUrl -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- validTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

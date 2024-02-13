@@ -14,7 +14,7 @@ public class LandingPage extends AbstractComponents {
 	@FindBy(xpath="(//ol[@class='sku-item-list']//*[@class='column-left'])[1]")
 	WebElement selectFirst;
 	
-	@FindBy(xpath="//div[contains(@class,'quick-assessment')]//*[text()='Add to Cart']")
+	@FindBy(xpath="//div[contains(@class,'quick-assessment')]//div[contains(@class,'col-xs')]//*[text()='Add to Cart']")
 	WebElement addToCartButton;
 	
 	@FindBy(xpath="//button[text()='Continue shopping']")

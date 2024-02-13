@@ -36,7 +36,7 @@ public void searchItemTest() {
 	System.out.println(msg);
 	Assert.assertTrue(Pattern.matches("(?i).*Nikon.*d850.*", msg));
 	
-	//Assert.assertTrue(msg.contains(product.toLowerCase()));
+	
 }
 
 @Test
@@ -65,12 +65,7 @@ public void searchAndAddItemToCartTest() {
 	
 	
 	
-@Override	
-@AfterMethod()
-public void tear(){
-close();
-}	
-	
+
 	
 	
 }

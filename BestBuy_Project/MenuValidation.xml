@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test">
+<suite name="Suite" parallel="tests" thread-count="2">
 	    <parameter name="browser" value="chrome"></parameter> 
 	 <parameter name="url" value="https://www.bestbuy.com/?intl=nosplash"></parameter>
+  <test name="Test1">
     <classes>
-      <class name="scratchTest.MenuValidation"/>
-    </classes>
-  </test> <!-- Test -->
+      <class name="test.MenuValidation">
+		 <methods>
+			 <exclude name="TopMenuFunctionality"></exclude>
+		 </methods>
+	  </class>
+ </classes>
+  </test><!-- Test -->
+   <test name="Test2">
+    <classes>
+      <class name="test.MenuValidation">
+		  <methods>
+			 <include name="TopMenuFunctionality"></include>
+		 </methods>
+	  </class>
+ </classes>
+  </test><!-- Test -->
 </suite> <!-- Suite -->

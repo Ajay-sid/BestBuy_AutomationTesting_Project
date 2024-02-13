@@ -30,34 +30,43 @@ public class ValidUrl extends ProjectSpec {
 	
 	@BeforeClass()
 	public void setup() {
-		System.out.println("excel");
-		excelFile = "validUrl";
+		excelFile = "UrlValidation";
+		System.out.println("excel initiated");
+	
 	}
 	
 	@Parameters({"browser","url"})
 	@Test
-	//Testing BestBuy url
-	public void validUrl(String browser,String url) throws IOException {
+	//Testing BestBuy url for valid url Test
+	public void validUrlTest(String browser,String url) throws IOException {
 		launch(browser, url);
 		String msg = urlCheck(url);
 		System.out.println(getPageTitle());
 		Assert.assertEquals(getPageTitle(),prop.getProperty("BestBuyTitle"));
-		Assert.assertEquals(msg,"valid");
-	}
-	
-	
-	@Test(dataProvider="getData")
-	//Testing other domain URL 
-	public void OtherDomainValidUrl(String url,String title) throws IOException {
-		launch(prop.getProperty("browser"), url);
-		String msg = urlCheck(url);
-		System.out.println(getPageTitle());
-		Assert.assertNotEquals(getPageTitle(),title);
-		Assert.assertEquals(msg,"valid");
+		Assert.assertEquals(msg, "Link is valid");
 		
 	}
 	
-
+	@Parameters({"browser","url"})
+	@Test
+	//Testing other domain URL for Invalid Test
+	public void OtherDomainValidUrl(String browser,String url) throws IOException {
+		//String url = "https://www.google.com";
+		launch(browser, url);
+		String msg = urlCheck(url);
+		System.out.println(getPageTitle());
+		Assert.assertNotEquals(getPageTitle(),prop.getProperty("BestBuyTitle"));
+		Assert.assertEquals(msg,"Link is valid");
+		
+	}
+	
+	@Test(dataProvider="getData")
+	//Testing invalid URL format Like missing "https://" and invalid protocol like "fttps://"
+	public void testInvalidUrl(String url,String error) throws InterruptedException, IOException {
+		launch(prop.getProperty("browser"),url);
+		String message = urlCheck(url);
+		Assert.assertEquals(message,error);	
+	}
 	
 	
 
