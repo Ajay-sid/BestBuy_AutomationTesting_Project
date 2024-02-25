@@ -5,7 +5,7 @@
 	  <parameter name="browser" value="chrome"></parameter> 
 	 <parameter name="url" value="https://www.bestbuy.com/?intl=nosplash"></parameter>
     <classes>
-      <class name="scratchTest.SignUpTest"/>
+      <class name="test.SignUpTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

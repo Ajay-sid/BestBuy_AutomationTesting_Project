@@ -5,7 +5,7 @@
 	    <parameter name="browser" value="chrome"></parameter> 
 	 <parameter name="url" value="https://www.bestbuy.com/?intl=nosplash"></parameter>
     <classes>
-      <class name="scratchTest.E2EsearcAndAddItemToCart"/>
+      <class name="test.E2EsearcAndAddItemToCart"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

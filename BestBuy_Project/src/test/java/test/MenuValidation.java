@@ -12,6 +12,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -125,10 +126,10 @@ public class MenuValidation extends ProjectSpec{
 	
 	
 
-	
-	@AfterClass
-	public void teardown() {
-		
+	@Override
+	@AfterMethod
+	public void tear(ITestResult result){
+		quit();
 	}
 	
 }
